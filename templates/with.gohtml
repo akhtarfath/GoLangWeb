@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>With in Golang Template</title>
+</head>
+<body>
+    {{ if .Name }}
+        {{ with .Name }} {{/* // if name is not nil then execute the block */}}
+            Name : {{ .First }} {{ .Middle }} {{ .Last }} <br/> {{/* // . is the value of Name */}}
+        {{ end }}
+        {{ with .Address }} {{/* // if address is not nil then execute the block */}}
+            Address : {{ .Street }}, {{ .City }}, {{ .Province }}, {{ .Country }} <br/> {{/* // . is the value of Address */}}
+        {{ else }}
+        {{/* // if address is nil then execute the block */}}
+            Address : Not Available <br/>
+        {{ end }}
+        {{ with .Phone }} {{/* // if phone is not nil then execute the block */}}
+            Phone : {{ . }} <br/> {{/* // . is the value of Phone */}}
+        {{ else }}
+        {{/* // if phone is nil then execute the block */}}
+            Phone : Not Available <br/>
+        {{ end }}
+    {{ end }}
+</body>
+</html>

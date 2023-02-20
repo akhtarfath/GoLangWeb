@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparator in Golang Template</title>
+</head>
+<body>
+    {{/* eq is equal to */}}
+    {{/* ne is not equal to */}}
+    {{/* lt is less than */}}
+    {{/* le is less than or equal to */}}
+    {{/* gt is greater than */}}
+    {{/* ge is greater than or equal to */}}
+
+    {{ if eq .FinalValue 100 }}
+        <h1>Perfect! Excellent</h1>
+    {{ else if ge .FinalValue 80 }}
+        <h1>Pass! Good</h1>
+    {{ else if ge .FinalValue 60 }}
+        <h1>Nice Try!</h1>
+    {{ else }}
+        <h1>Fail! Try Again</h1>
+    {{ end }}
+</body>
+</html>

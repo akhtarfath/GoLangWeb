@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Range in Golang Template </title>
+</head>
+<body>
+    {{ range $index, $element := .Hobbies }}
+        <p> Hobby ke-{{ $index }} : {{ $element }} </p>
+    {{else}}
+        <p> No hobbies </p>
+    {{ end }}
+</body>
+</html>
